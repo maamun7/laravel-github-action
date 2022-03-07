@@ -4,7 +4,7 @@ namespace Serpository\Generators;
 
 use Exception;
 use Serpository\Str;
-use Serpository\Entities\Repositoy;
+use Serpository\Entities\Repository;
 use Serpository\Entities\Service;
 
 class ServiceGenerator extends Generator
@@ -13,18 +13,18 @@ class ServiceGenerator extends Generator
      * Generate Service & Repository
      *
      * @param $name
-     * @param Repositoy|null $repository
+     * @param Repository|null $repository
      *
      * @return Service
      * @throws Exception
      */
-    public function generate($name, Repositoy|null $repository): Service
+    public function generate($name, Repository|null $repository): Service
     {
         $service = Str::service($name);
         $filePath = $this->getServiceFilePath($service);
 
         if ($this->exists($filePath)) {
-            throw new Exception('Service already exists');
+            throw new Exception('Service already exists.');
         }
 
         $serviceRootDir = $this->getServicesRootPath();
@@ -36,17 +36,23 @@ class ServiceGenerator extends Generator
 
         $namespace = $this->getServiceNamespace();
         $stub = !$repository ? $this->getStub() : $this->getRepoInjectedService();
+        $repoInfo = $this->getRepoInfo($repository);
 
+       // dd($repoInfo);
         $content = file_get_contents($stub);
         $content = str_replace(
             [
                 '{{namespace}}',
-                '{{service}}'
+                '{{service}}',
+                '{{interfaceNamespace}}',
+                '{{interfaceName}}',
+                '{{paramName}}',
             ],
 
             [
                 $namespace,
-                $service
+                $service,
+                ...$repoInfo
             ],
 
             $content
@@ -59,6 +65,24 @@ class ServiceGenerator extends Generator
             $this->relativeFromReal($filePath),
             $namespace,
         );
+    }
+
+    /**
+     * @param Repository|null $repository
+     *
+     * @return array
+     */
+    public function getRepoInfo(Repository|null $repository): array
+    {
+        if ($repository === null) {
+            return [];
+        }
+
+        return [
+            $repository->interfaceNamespace,
+            $repository->interfaceName,
+            lcfirst($repository->title),
+        ];
     }
 
     /**

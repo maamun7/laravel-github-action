@@ -2,14 +2,14 @@
 
 namespace App\Services;
 
+use App\Repositories\Interfaces\UserRepositoryInterface;
+
 class UserService
 {
      protected UserRepositoryInterface $userRepository;
 
     /**
-     * Create a new operation instance.
-     *
-     * @return void
+     * @param UserRepositoryInterface $userRepository
      */
     public function __construct(UserRepositoryInterface $userRepository)
     {

@@ -4,7 +4,7 @@ namespace Serpository\Generators;
 
 use Exception;
 use Serpository\Str;
-use Serpository\Entities\Repositoy;
+use Serpository\Entities\Repository;
 
 class RepositoryGenerator extends Generator
 {
@@ -13,17 +13,17 @@ class RepositoryGenerator extends Generator
      *
      * @param $name
      *
-     * @return Repositoy
+     * @return Repository
      * @throws Exception
      */
-    public function generate($name): Repositoy
+    public function generate($name): Repository
     {
         $repository = Str::repository($name);
         $interface = Str::repositoryInterface($name);
         $filePath = $this->getRepositoriesFilePath($repository);
 
         if ($this->exists($filePath)) {
-            throw new Exception('Repository already exists');
+            throw new Exception('Repository already exists.');
         }
 
         $reposDirectories = [
@@ -44,10 +44,12 @@ class RepositoryGenerator extends Generator
         $this->createRepository($namespace, $repository, $filePath, $interface, $interfaceNamespace);
         $this->createInterface($interface, $interfaceNamespace);
 
-        return new Repositoy(
+        return new Repository(
             $repository,
             $this->relativeFromReal($filePath),
             $namespace,
+            $interface,
+            $interfaceNamespace,
         );
     }
 

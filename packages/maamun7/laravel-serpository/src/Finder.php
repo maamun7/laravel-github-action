@@ -2,6 +2,8 @@
 
 namespace Serpository;
 
+use \Exception;
+
 if (!defined('DS')) {
     define('DS', DIRECTORY_SEPARATOR);
 }
@@ -19,9 +21,6 @@ trait Finder
     }
 
     /**
-     * Find the path to the directory of the given service name.
-     * In the case of a microservice service installation this will be app path.
-     *
      * @param string $service
      *
      * @return string
@@ -42,10 +41,7 @@ trait Finder
     }
 
     /**
-     * Find the path to the directory of the given service name.
-     * In the case of a microservice service installation this will be app path.
-     *
-     * @param string $service
+     * @param string $repository
      *
      * @return string
      */
@@ -93,8 +89,9 @@ trait Finder
 
     /**
      * @param string $dir
-     *
      * @return string
+     *
+     * @throws Exception
      */
     public function findNamespace(string $dir): string
     {
@@ -112,16 +109,22 @@ trait Finder
         throw new \Exception('App namespace not set in composer.json');
     }
 
+
     /**
      * @return string
+     *
+     * @throws Exception
      */
     public function getAppNamespace(): string
     {
         return $this->findNamespace('app');
     }
 
+
     /**
      * @return string
+     *
+     * @throws Exception
      */
     public function getServiceNamespace(): string
     {
@@ -130,6 +133,8 @@ trait Finder
 
     /**
      * @return string
+     *
+     * @throws Exception
      */
     public function getRepositoryNamespace(): string
     {
@@ -138,6 +143,8 @@ trait Finder
 
     /**
      * @return string
+     *
+     * @throws Exception
      */
     public function getInterfaceNamespace(): string
     {
@@ -159,6 +166,9 @@ trait Finder
         return strstr($path, $needle);
     }
 
+    /**
+     * @return string
+     */
     protected function getSourceDirectoryName(): string
     {
         return 'app';
@@ -195,6 +205,8 @@ trait Finder
 
     /**
      * @return string
+     *
+     * @throws Exception
      */
     public function getModelNamespace(): string
     {

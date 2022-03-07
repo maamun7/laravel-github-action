@@ -4,7 +4,7 @@ namespace Serpository\Console\Commands;
 
 use Exception;
 use Serpository\Console\Command;
-use Serpository\Entities\Repositoy;
+use Serpository\Entities\Repository;
 use Serpository\Generators\ServiceGenerator;
 use Serpository\Generators\RepositoryGenerator;
 use Symfony\Component\Console\Input\InputOption;
@@ -51,11 +51,22 @@ class MakeServiceRepositoryCommand extends SymfonyCommand
 
             $service = $generator->generate($serviceName, $repository);
 
-            $this->info(
+            $this->printOutput(
                 "Service class created successfully." .
                 "\n" .
                 "\n" .
                 "Find it at <comment>" . $service->path . "</comment>" . "\n"
+            );
+
+            if ($repository === null) {
+                die();
+            }
+
+            $this->printOutput(
+                "Repository class created successfully." .
+                "\n" .
+                "\n" .
+                "Find it at <comment>" . $repository->path . "</comment>" . "\n"
             );
         } catch (Exception $e) {
             $this->error($e->getMessage());
@@ -67,22 +78,15 @@ class MakeServiceRepositoryCommand extends SymfonyCommand
      *
      * @param $repositoryName
      *
-     * @return Repositoy|null
+     * @return Repository|null
      */
-    public function createRepository($repositoryName): Repositoy|null
+    public function createRepository($repositoryName): Repository|null
     {
         $repository = null;
         $generator = new RepositoryGenerator();
 
         try {
             $repository = $generator->generate($repositoryName);
-
-            $this->info(
-                "Repository class created successfully." .
-                "\n" .
-                "\n" .
-                "Find it at <comment>" . $repository->path . "</comment>" . "\n"
-            );
         } catch (Exception $e) {
             $this->error($e->getMessage());
         }

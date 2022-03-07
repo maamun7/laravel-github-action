@@ -4,11 +4,6 @@ namespace {{namespace}};
 
 class {{service}}
 {
-    /**
-     * Create a new operation instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         //

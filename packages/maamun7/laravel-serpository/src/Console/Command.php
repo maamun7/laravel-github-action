@@ -102,7 +102,7 @@ trait Command
      *
      * @param string $string
      */
-    public function info(string $string): void
+    public function printOutput(string $string): void
     {
         $this->output->writeln("<info>$string</info>");
     }

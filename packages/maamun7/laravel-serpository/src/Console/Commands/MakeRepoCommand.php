@@ -38,7 +38,7 @@ class MakeRepoCommand extends SymfonyCommand
         try {
             $repository = $generator->generate($repositoryName);
 
-            $this->info(
+            $this->printOutput(
                 "Repository class created successfully." .
                 "\n" .
                 "\n" .
