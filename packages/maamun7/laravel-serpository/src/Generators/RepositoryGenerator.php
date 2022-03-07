@@ -9,7 +9,7 @@ use Serpository\Entities\Repositoy;
 class RepositoryGenerator extends Generator
 {
     /**
-     * Generate the file.
+     * Generate Repository
      *
      * @param $name
      *
@@ -51,6 +51,17 @@ class RepositoryGenerator extends Generator
         );
     }
 
+    /**
+     * Create Repository and inject Interface
+     *
+     * @param $namespace
+     * @param $repository
+     * @param $filePath
+     * @param $interface
+     * @param $interfaceNamespace
+     *
+     * @return void
+     */
     public function createRepository($namespace, $repository, $filePath, $interface, $interfaceNamespace): void
     {
         $modelStub = $this->findModel($repository);
@@ -82,6 +93,13 @@ class RepositoryGenerator extends Generator
         $this->createFile($filePath, $content);
     }
 
+    /**
+     * Find Model by concatenating few formats with the provided Repository base name
+     *
+     * @param string $repositoryName
+     *
+     * @return array
+     */
     public function findModel(string $repositoryName): array
     {
         $modelName = Str::model($repositoryName);
@@ -105,6 +123,14 @@ class RepositoryGenerator extends Generator
         ];
     }
 
+    /**
+     * Create Interface
+     *
+     * @param $interface
+     * @param $namespace
+     *
+     * @return void
+     */
     public function createInterface($interface, $namespace): void
     {
         $filePath = $this->getInterfacesFilePath($interface);
@@ -120,7 +146,7 @@ class RepositoryGenerator extends Generator
     }
 
     /**
-     * Get the stub file for generation Service.
+     * Get the stub file for generating Repository.
      *
      * @return string
      */
@@ -130,7 +156,7 @@ class RepositoryGenerator extends Generator
     }
 
     /**
-     * Get the stub file for generation Service.
+     * Get the stub file for generating Interface.
      *
      * @return string
      */

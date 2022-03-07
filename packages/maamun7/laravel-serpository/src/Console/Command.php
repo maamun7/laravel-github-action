@@ -22,7 +22,7 @@ trait Command
      *
      * @return void
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName($this->name)
@@ -42,7 +42,7 @@ trait Command
      *
      * @return array
      */
-    public function getArguments() : array
+    public function getArguments(): array
     {
         return [];
     }
@@ -52,7 +52,7 @@ trait Command
      *
      * @return array
      */
-    public function getOptions() : array
+    public function getOptions(): array
     {
         return [];
     }
@@ -65,7 +65,7 @@ trait Command
      *
      * @return int
      */
-    public function execute(InputInterface $input, OutputInterface $output) : int
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->input = $input;
         $this->output = $output;
@@ -80,7 +80,7 @@ trait Command
      *
      * @return string
      */
-    public function argument(string $key) : string
+    public function argument(string $key): string
     {
         return $this->input->getArgument($key);
     }
@@ -92,7 +92,7 @@ trait Command
      *
      * @return string
      */
-    public function option(string $key) : string
+    public function option(string $key): string
     {
         return $this->input->getOption($key);
     }
@@ -102,7 +102,7 @@ trait Command
      *
      * @param string $string
      */
-    public function info(string $string) : void
+    public function info(string $string): void
     {
         $this->output->writeln("<info>$string</info>");
     }
@@ -113,7 +113,7 @@ trait Command
      * @param  string  $string
      * @return void
      */
-    public function comment(string $string) : void
+    public function comment(string $string): void
     {
         $this->output->writeln("<comment>$string</comment>");
     }
@@ -124,7 +124,7 @@ trait Command
      * @param string $string
      * @return void
      */
-    public function error(string $string) : void
+    public function error(string $string): void
     {
         $this->output->writeln("<error>$string</error>");
     }

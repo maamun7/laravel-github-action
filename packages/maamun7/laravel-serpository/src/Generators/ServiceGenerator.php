@@ -3,22 +3,22 @@
 namespace Serpository\Generators;
 
 use Exception;
-use Serpository\Entities\Repositoy;
 use Serpository\Str;
+use Serpository\Entities\Repositoy;
 use Serpository\Entities\Service;
 
 class ServiceGenerator extends Generator
 {
     /**
-     * Description
+     * Generate Service & Repository
      *
      * @param $name
-     * @param Repositoy|null $repositoy
+     * @param Repositoy|null $repository
      *
      * @return Service
      * @throws Exception
      */
-    public function generate($name, Repositoy|null $repositoy): Service
+    public function generate($name, Repositoy|null $repository): Service
     {
         $service = Str::service($name);
         $filePath = $this->getServiceFilePath($service);
@@ -35,7 +35,7 @@ class ServiceGenerator extends Generator
         }
 
         $namespace = $this->getServiceNamespace();
-        $stub = !$repositoy ? $this->getStub() : $this->getRepoInjectedService();
+        $stub = !$repository ? $this->getStub() : $this->getRepoInjectedService();
 
         $content = file_get_contents($stub);
         $content = str_replace(
@@ -62,7 +62,7 @@ class ServiceGenerator extends Generator
     }
 
     /**
-     * Get the stub file for generation Service.
+     * Get the stub file for generating Service.
      *
      * @return string
      */
@@ -71,6 +71,11 @@ class ServiceGenerator extends Generator
         return __DIR__ . '/../Generators/stubs/service.stub';
     }
 
+    /**
+     * Get ths stub file for generating Repository Injected Service
+     *
+     * @return string
+     */
     public function getRepoInjectedService(): string
     {
         return __DIR__ . '/../Generators/stubs/injectedService.stub';

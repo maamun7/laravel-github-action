@@ -1,5 +1,5 @@
 {
-    "name": "mamun/laravel-service-repository",
+    "name": "maamun7/serpository",
     "description": "An architecture for scalable software.",
     "authors": [
         {
@@ -9,7 +9,6 @@
     ],
     "type": "library",
     "keywords": ["architecture", "moon", "laravel"],
-    "bin": ["moon"],
     "require": {
         "symfony/filesystem": "5.4.x-dev",
         "symfony/console": "5.4.x-dev"

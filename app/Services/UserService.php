@@ -2,11 +2,10 @@
 
 namespace App\Services;
 
-use App\Repositories\Interfaces\UserRepositoryInterface;
-
 class UserService
 {
-    protected UserRepositoryInterface $userRepository;
+     protected UserRepositoryInterface $userRepository;
+
     /**
      * Create a new operation instance.
      *

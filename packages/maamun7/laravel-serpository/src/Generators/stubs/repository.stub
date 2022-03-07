@@ -14,27 +14,59 @@ class {{repository}} implements {{interface}}
         {{bindProperty}} = {{paramName}};
     }
 
-    public function all()
+    /**
+     * Get\'s all records.
+     *
+     * @return mixed
+     */
+    public function all(): mixed
     {
         return {{bindProperty}}->all();
     }
 
-    public function find($id)
+    /**
+     * Get\'s a record by it\'s ID
+     *
+     * @param int
+     */
+    public function find(int $id): mixed
     {
         // TODO: Implement find() method.
     }
 
-    public function create(array $data)
+    /**
+     * Create a record.
+     *
+     * @param array $data
+     *
+     * @return mixed
+     */
+    public function create(array $data): mixed
     {
         // TODO: Implement create() method.
     }
 
-    public function update(array $data, $id)
+    /**
+     * Update a record.
+     *
+     * @param array $data
+     * @param int $id
+     *
+     * @return mixed
+     */
+    public function update(array $data, int $id): mixed
     {
         // TODO: Implement update() method.
     }
 
-    public function delete($id)
+    /**
+     * Delete a record.
+     *
+     * @param int $id
+     *
+     * @return mixed
+     */
+    public function delete(int $id): mixed
     {
         // TODO: Implement delete() method.
     }

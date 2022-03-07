@@ -63,6 +63,8 @@ class MakeServiceRepositoryCommand extends SymfonyCommand
     }
 
     /**
+     * Create Repository with injecting interface
+     *
      * @param $repositoryName
      *
      * @return Repositoy|null
@@ -92,7 +94,7 @@ class MakeServiceRepositoryCommand extends SymfonyCommand
     {
         return [
             ['r', 'R', InputOption::VALUE_NONE, 'Whether a repository will create or not.'],
-            ['repo', 'RP', InputOption::VALUE_OPTIONAL, 'Repository name.', ''],
+            ['repo', 'RP', InputOption::VALUE_OPTIONAL, 'If Repository has different name.', ''],
         ];
     }
 

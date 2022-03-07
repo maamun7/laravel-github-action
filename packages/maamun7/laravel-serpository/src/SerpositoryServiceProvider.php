@@ -2,10 +2,8 @@
 
 namespace Serpository;
 
-use Serpository\Finder;
 use Illuminate\Support\ServiceProvider;
 use Serpository\Console\Commands\MakeRepoCommand;
-use Serpository\Console\Commands\MakeServiceCommand;
 use Serpository\Console\Commands\MakeRepositoryCommand;
 use Serpository\Console\Commands\MakeServiceRepositoryCommand;
 
@@ -15,7 +13,6 @@ class SerpositoryServiceProvider extends ServiceProvider
 
     private array $command = [
         MakeRepoCommand::class,
-        MakeServiceCommand::class,
         MakeRepositoryCommand::class,
         MakeServiceRepositoryCommand::class,
     ];
