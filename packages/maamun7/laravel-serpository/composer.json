@@ -1,6 +1,8 @@
 {
     "name": "maamun7/serpository",
-    "description": "An architecture for scalable software.",
+    "description": "Generate service, repositories and inject for scalable laravel application.",
+    "license": "MIT",
+    "homepage": "https://github.com/maamun7/serpository",
     "authors": [
         {
             "name": "Mamun Ahmed",
@@ -8,10 +10,11 @@
         }
     ],
     "type": "library",
-    "keywords": ["architecture", "moon", "laravel"],
+    "keywords": ["laravel-service-repositoy", "service-repositoy", "service", "repositoy", "service-repositoy-pattern"],
     "require": {
-        "symfony/filesystem": "5.4.x-dev",
-        "symfony/console": "5.4.x-dev"
+        "php": "^8.0",
+        "symfony/console": "*",
+        "symfony/filesystem": "*"
     },
     "autoload": {
         "psr-4": {

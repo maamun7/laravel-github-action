@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12524947d8c752f84bc21aaaede06bfa",
+    "content-hash": "12a68e868c5d60b13c2f4a0a25c486d1",
     "packages": [
         {
             "name": "brick/math",
@@ -1594,6 +1594,57 @@
                 }
             ],
             "time": "2021-11-21T11:48:40+00:00"
+        },
+        {
+            "name": "maamun7/serpository",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maamun7/serpository.git",
+                "reference": "7d791afbeb1165df964aa66ad8a853570e9dbd12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maamun7/serpository/zipball/7d791afbeb1165df964aa66ad8a853570e9dbd12",
+                "reference": "7d791afbeb1165df964aa66ad8a853570e9dbd12",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0",
+                "symfony/console": "*",
+                "symfony/filesystem": "*"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Serpository\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mamun Ahmed",
+                    "email": "maamun7@gmail.com"
+                }
+            ],
+            "description": "Generate service, repositories and inject for scalable laravel application.",
+            "homepage": "https://github.com/maamun7/serpository",
+            "keywords": [
+                "laravel-service-repositoy",
+                "repositoy",
+                "service",
+                "service-repositoy",
+                "service-repositoy-pattern"
+            ],
+            "support": {
+                "issues": "https://github.com/maamun7/serpository/issues",
+                "source": "https://github.com/maamun7/serpository/tree/master"
+            },
+            "time": "2022-03-07T19:24:23+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3186,6 +3237,69 @@
                 }
             ],
             "time": "2021-07-15T12:33:35+00:00"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "v6.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "52b888523545b0b4049ab9ce48766802484d7046"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/52b888523545b0b4049ab9ce48766802484d7046",
+                "reference": "52b888523545b0b4049ab9ce48766802484d7046",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.2",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides basic utilities for the filesystem",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/filesystem/tree/v6.0.6"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-03-02T12:58:14+00:00"
         },
         {
             "name": "symfony/finder",
@@ -7731,7 +7845,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "maamun7/serpository": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
