@@ -1,0 +1,24 @@
+{
+    "name": "mamun/laravel-service-repository",
+    "description": "An architecture for scalable software.",
+    "authors": [
+        {
+            "name": "Mamun Ahmed",
+            "email": "maamun7@gmail.com"
+        }
+    ],
+    "type": "library",
+    "keywords": ["architecture", "moon", "laravel"],
+    "bin": ["moon"],
+    "require": {
+        "symfony/filesystem": "5.4.x-dev",
+        "symfony/console": "5.4.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Serpository\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
