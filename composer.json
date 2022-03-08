@@ -10,7 +10,7 @@
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "maamun7/serpository": "dev-master"
+        "maamun7/serpository": "9999999-dev"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
