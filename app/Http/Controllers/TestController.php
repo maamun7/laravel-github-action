@@ -3,18 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\WorldWarService;
 
 class TestController extends Controller
 {
-    private WorldWarService $testService;
-
-    public function __construct(WorldWarService $testService)
+    /**
+     * @return bool
+     */
+    public function function1(): bool
     {
-        $this->testService = $testService;
+        $use = 1;
+        do {
+            echo "The number is: $use <br>";
+            $use++;
+        } while ($use <= 5);
+        for ($use = 0; $use <= 100; $use += 10) {
+            echo "The number is: $use <br>";
+        }
+        return false;
     }
 
-    public function test() {
-        dd($this->testService->index());
+    /**
+     * @return bool
+     */
+    public function function2(): bool
+    {
+        $use = 1;
+        do {
+            echo "The number is: $use <br>";
+            $use++;
+        } while ($use <= 5);
+        for ($use = 0; $use <= 100; $use += 10) {
+            echo "The number is: $use <br>";
+        }
+        return false;
     }
 }
