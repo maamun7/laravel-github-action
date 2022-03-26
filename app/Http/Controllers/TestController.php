@@ -11,14 +11,10 @@ class TestController extends Controller
      */
     public function function1(): bool
     {
-        $use = 1;
-        do {
-            echo "The number is: $use <br>";
-            $use++;
-        } while ($use <= 5);
-        for ($use = 0; $use <= 100; $use += 10) {
-            echo "The number is: $use <br>";
+        if(-1 == true) {
+            return true;
         }
+
         return false;
     }
 
@@ -32,9 +28,11 @@ class TestController extends Controller
             echo "The number is: $use <br>";
             $use++;
         } while ($use <= 5);
+
         for ($use = 0; $use <= 100; $use += 10) {
             echo "The number is: $use <br>";
         }
+
         return false;
     }
 }
