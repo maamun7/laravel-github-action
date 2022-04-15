@@ -23,8 +23,7 @@ class TestController extends Controller
      */
     public function function2(): bool
     {
-        $use = 1;
-        do
+        $use = 1;do
         {
             echo "The number ---------------------------------------------------------------------------------is: $use <br>";
             $use++;
