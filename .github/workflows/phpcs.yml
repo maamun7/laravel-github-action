@@ -1,18 +1,22 @@
-name: PHP_Code_Sniffer
+name: PHP_CodeSniffer
+
 on: pull_request
+
 jobs:
-  PHPCS_Inspection:
-    name: Run PHPCS inspection
+  phpcs:
     runs-on: ubuntu-latest
+
     steps:
+      - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+        with:
+          php-version: '8.0'
+
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      - name: Run PHPCS inspection
-        uses: rtCamp/action-phpcs-code-review@v2
-        env:
-          GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
-          SKIP_FOLDERS: "tests,.github,vendor,storage,config,bootstrap"
-          PHPCS_SNIFFS_EXCLUDE: "WordPress.Files.FileName"
-        with:
-          args: "PSR2,PSR12"
+          fetch-depth: 0 # important!
+
+      - name: Set PHPCS version
+        run: composer require "squizlabs/php_codesniffer=*"
+
+      - name: Run PHPCS
+        run: composer run-script phpcs
