@@ -10,7 +10,7 @@
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "maamun7/serpository": "9999999-dev",
+        "maamun7/serpository": "dev-master",
         "sebastian/phpcpd": "^6.0"
     },
     "require-dev": {
@@ -26,8 +26,7 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/",
-            "Serpository\\": "packages/maamun7/laravel-serpository/src"
+            "Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {

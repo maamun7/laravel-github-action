@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "629f39c26b32163e3f7674ff6ba3d32a",
+    "content-hash": "66603f7fb4bc7d5cc3984a74b57829ce",
     "packages": [
         {
             "name": "brick/math",
@@ -1604,12 +1604,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/maamun7/serpository.git",
-                "reference": "06c3a2e853985afec8351a070ebb645c6b47f73c"
+                "reference": "c7c57dbd7baf8cc7964fc3b753e6ae4ecccf73eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maamun7/serpository/zipball/06c3a2e853985afec8351a070ebb645c6b47f73c",
-                "reference": "06c3a2e853985afec8351a070ebb645c6b47f73c",
+                "url": "https://api.github.com/repos/maamun7/serpository/zipball/c7c57dbd7baf8cc7964fc3b753e6ae4ecccf73eb",
+                "reference": "c7c57dbd7baf8cc7964fc3b753e6ae4ecccf73eb",
                 "shasum": ""
             },
             "require": {
@@ -1650,7 +1650,7 @@
                 "issues": "https://github.com/maamun7/serpository/issues",
                 "source": "https://github.com/maamun7/serpository/tree/master"
             },
-            "time": "2022-03-13T07:50:29+00:00"
+            "time": "2022-04-16T14:20:46+00:00"
         },
         {
             "name": "monolog/monolog",
