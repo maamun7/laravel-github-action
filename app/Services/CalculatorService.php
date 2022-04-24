@@ -2,10 +2,19 @@
 
 namespace App\Services;
 
+/**
+ *
+ */
 class CalculatorService
 {
-    public function subtract(int|float $dividend, int|float $divisor): int|float
+    /**
+     * @param int|float $number1
+     * @param int|float $number2
+     *
+     * @return int|float
+     */
+    public function add(int|float $number1, int|float $number2): int|float
     {
-        return $dividend / $divisor;
+        return floor($number1) + $number2;
     }
 }
