@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\Services;
 
-use App\Services\CalculatorService;
 use PHPUnit\Framework\TestCase;
+use App\Services\CalculatorService;
 
 class CalculatorServiceTest extends TestCase
 {

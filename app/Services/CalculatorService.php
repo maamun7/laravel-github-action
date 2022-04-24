@@ -2,9 +2,6 @@
 
 namespace App\Services;
 
-/**
- *
- */
 class CalculatorService
 {
     /**
