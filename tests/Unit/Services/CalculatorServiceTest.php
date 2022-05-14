@@ -26,8 +26,8 @@ class CalculatorServiceTest extends TestCase
      */
     public function subtractShouldReturnFractionResultWhenGivenNumber1IsFloatAndNumber2IsInt(): void
     {
-        $result = (new CalculatorService())->add(5.5, 5);
+        $result = (new CalculatorService())->add(5.8, 5);
 
-        $this->assertEquals(10.5, $result);
+        $this->assertEquals(10.8, $result);
     }
 }
